@@ -1,0 +1,97 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^0.0.0/components/context.jsonld",
+  "import": [
+    "files-scs:config/presets/acl.json",
+    "files-scs:config/presets/http.json",
+    "files-scs:config/presets/init.json",
+    "files-scs:config/presets/ldp.json",
+
+    "files-scs:config/presets/ldp/metadata-handler.json",
+    "files-scs:config/presets/ldp/operation-handler.json",
+    "files-scs:config/presets/ldp/permissions-extractor.json",
+    "files-scs:config/presets/ldp/response-writer.json",
+    "files-scs:config/presets/ldp/request-parser.json",
+    "files-scs:config/presets/ldp/websockets.json",
+    "files-scs:config/presets/logging.json",
+    "files-scs:config/presets/middleware.json",
+    "files-scs:config/presets/pod-management.json",
+    "files-scs:config/presets/representation-conversion.json",
+    "files-scs:config/presets/storage/backend/storage-filesystem.json",
+    "files-scs:config/presets/storage-wrapper.json",
+    "files-scs:config/presets/cli-params.json"
+  ],
+  "@graph": [
+
+    {
+      "comment": "Use the filesystem as the default storage",
+      "@id": "urn:solid-server:default:RoutingResourceStore",
+      "@type": "PassthroughStore",
+      "PassthroughStore:_source": {
+        "@id": "urn:solid-server:default:FileResourceStore"
+      }
+    },
+
+    {
+      "comment": "Serve the mashlib Data Browser as the default HTML representation",
+      "@id": "urn:solid-server:default:IndexConverter",
+      "@type": "ConstantConverter",
+      "ConstantConverter:_contentType": "text/html",
+      "ConstantConverter:_filePath": "./node_modules/mashlib/dist/databrowser.html"
+    },
+
+    {
+      "comment": "Serve the mashlib CSS and JavaScript resources",
+      "@id": "urn:solid-server:default:StaticAssetHandler",
+      "@type": "StaticAssetHandler",
+      "StaticAssetHandler:_assets": [
+        {
+          "StaticAssetHandler:_assets_key": "/mash.css",
+          "StaticAssetHandler:_assets_value": "./node_modules/mashlib/dist/mash.css"
+        },
+        {
+          "StaticAssetHandler:_assets_key": "/mashlib.min.js",
+          "StaticAssetHandler:_assets_value": "./node_modules/mashlib/dist/mashlib.min.js"
+        }
+      ]
+    },
+
+    {
+      "comment": "Enable multiple authentication options, some of which are for development purposes",
+      "@id": "urn:solid-server:default:CredentialsExtractor",
+      "@type": "WaterfallHandler",
+      "WaterfallHandler:_handlers": [
+
+        {
+          "comment": "Enable DPoP authentication",
+          "@type": "DPoPWebIdExtractor",
+          "DPoPWebIdExtractor:_originalUrlExtractor": {
+            "@type": "OriginalUrlExtractor"
+          }
+        },
+
+        {
+          "comment": "Enable Bearer token authentication",
+          "@type": "BearerWebIdExtractor"
+        },
+
+        {
+          "comment": "Force authentication via header `Authorization: WebID http://example.org/#my-web-id`",
+          "@type": "UnsecureWebIdExtractor"
+        },
+
+        {
+          "comment": "Force authentication as a specific agent",
+          "@type": "UnsecureConstantCredentialsExtractor",
+          "UnsecureConstantCredentialsExtractor:_agent": "https://www.w3.org/People/Berners-Lee/card#i"
+        },
+
+        {
+          "comment": "Enable anonymous user",
+          "@type": "EmptyCredentialsExtractor"
+        }
+
+      ]
+    }
+
+  ]
+}
