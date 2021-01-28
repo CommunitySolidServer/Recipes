@@ -1,4 +1,4 @@
-# Solid Community Server recipes
+# 🍱 Solid Community Server recipes
 This repository contains example configurations
 for the [Solid Community Server](https://github.com/solid/community-server/),
 to get you started quickly.
@@ -8,7 +8,7 @@ You can launch the Solid Community Server with the following user interfaces:
 - [Penny](https://forum.solidproject.org/t/new-developer-tool-app-penny/3837)
 
 
-## Installing the recipes
+## ⚙️ Installing the recipes
 ```shell
 # Load the configurations to your device
 git clone https://github.com/solid/community-server-recipes
@@ -20,7 +20,7 @@ npm ci
 ```
 
 
-## Starting the server from a recipe
+## 🚀 Starting the server from a recipe
 
 ### Mashlib
 The Mashlib configurations are in the `mashlib` folder.
