@@ -1,3 +1,5 @@
+<img src="https://avatars.githubusercontent.com/u/14262490?s=66" alt="[Solid Logo]" align="right" />
+
 # 🍱 Solid Community Server recipes
 This repository contains example configurations
 for the [Solid Community Server](https://github.com/solid/community-server/),
