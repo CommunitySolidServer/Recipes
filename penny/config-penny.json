@@ -36,7 +36,7 @@
       "@id": "urn:solid-server:default:IndexConverter",
       "@type": "ConstantConverter",
       "ConstantConverter:_contentType": "text/html",
-      "ConstantConverter:_filePath": "./node_modules/penny-pod-inspector/server-ui/[[...slug]].html"
+      "ConstantConverter:_filePath": "./node_modules/penny-pod-inspector/server-ui/index.html"
     },
 
     {
@@ -45,8 +45,8 @@
       "@type": "StaticAssetHandler",
       "StaticAssetHandler:_assets": [
         {
-          "StaticAssetHandler:_assets_key": "/_next/",
-          "StaticAssetHandler:_assets_value": "./node_modules/penny-pod-inspector/server-ui/_next/"
+          "StaticAssetHandler:_assets_key": "/server-ui/",
+          "StaticAssetHandler:_assets_value": "./node_modules/penny-pod-inspector/server-ui/"
         }
       ]
     }
