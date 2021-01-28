@@ -1,11 +1,11 @@
 <img src="https://avatars.githubusercontent.com/u/14262490?s=66" alt="[Solid Logo]" align="right" />
 
-# 🍱 Solid Community Server recipes
+# 🍱 Community Solid Server recipes
 This repository contains example configurations
-for the [Solid Community Server](https://github.com/solid/community-server/),
+for the [Community Solid Server](https://github.com/solid/community-server/),
 to get you started quickly.
 
-You can launch the Solid Community Server with the following user interfaces:
+You can launch the Community Solid Server with the following user interfaces:
 - [Mashlib Data Browser](https://github.com/solid/mashlib)
 - [Penny](https://forum.solidproject.org/t/new-developer-tool-app-penny/3837)
 
