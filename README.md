@@ -1,17 +1,23 @@
-# Solid Community Server with Mashlib
+# Solid Community Server recipes
 This repository contains example configurations
-for the [Solid Community Server](https://github.com/solid/community-server/)
-with the [Mashlib Data Browser](https://github.com/solid/mashlib)
-as its default user interface.
+for the [Solid Community Server](https://github.com/solid/community-server/),
+to get you started quickly.
 
-## Installation
+You can launch the Solid Community Server with the following user interfaces:
+- [Mashlib Data Browser](https://github.com/solid/mashlib)
+
+## Installing the recipes
 ```shell
-git clone https://github.com/solid/community-server-mashlib
-cd community-server-mashlib
+# Load the configurations to your device
+git clone https://github.com/solid/community-server-recipes
+cd community-server-recipes
+
+# Pick the configuration of your choice, and install its dependencies
+cd mashlib
 npm ci
 ```
 
-## Usage
+## Starting the server from a recipe
 ```shell
 # Start the server with your home folder as the root container
 npx community-solid-server -c config-mashlib.json -f ~/Documents/
