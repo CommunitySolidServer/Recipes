@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@solid/community-server": "^0.7.0",
-    "penny-pod-inspector": "^0.248348682.993685335"
+    "@solid/community-server": "^0.8.0",
+    "penny-pod-inspector": "^0.264004211.1066219782"
   }
 }
