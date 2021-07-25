@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@solid/community-server": "^0.8.0",
-    "mashlib": "^1.6.9"
+    "@solid/community-server": "1.0.0-beta.1",
+    "mashlib": "^1.7.4"
   }
 }
