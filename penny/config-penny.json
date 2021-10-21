@@ -1,26 +1,31 @@
 {
-  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^1.0.0/components/context.jsonld",
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^2.0.0/components/context.jsonld",
   "import": [
-    "files-scs:config/app/app/default.json",
-    "files-scs:config/app/init/default.json",
+    "files-scs:config/app/main/default.json",
+    "files-scs:config/app/init/initialize-root.json",
+    "files-scs:config/app/setup/disabled.json",
     "files-scs:config/http/handler/default.json",
     "files-scs:config/http/middleware/websockets.json",
     "files-scs:config/http/server-factory/websockets.json",
+    "files-scs:config/http/static/default.json",
+    "files-scs:config/identity/access/public.json",
     "files-scs:config/identity/email/default.json",
     "files-scs:config/identity/handler/default.json",
     "files-scs:config/identity/ownership/token.json",
     "files-scs:config/identity/pod/static.json",
+    "files-scs:config/identity/registration/enabled.json",
     "files-scs:config/ldp/authentication/dpop-bearer.json",
     "files-scs:config/ldp/authorization/webacl.json",
     "files-scs:config/ldp/handler/default.json",
     "files-scs:config/ldp/metadata-parser/default.json",
     "files-scs:config/ldp/metadata-writer/default.json",
-    "files-scs:config/ldp/permissions/acl.json",
+    "files-scs:config/ldp/modes/default.json",
     "files-scs:config/storage/backend/file.json",
-    "files-scs:config/storage/key-value/memory.json",
+    "files-scs:config/storage/key-value/resource-store.json",
     "files-scs:config/storage/middleware/default.json",
     "files-scs:config/util/auxiliary/acl.json",
     "files-scs:config/util/identifiers/suffix.json",
+
     "files-scs:config/util/logging/winston.json",
     "files-scs:config/util/representation-conversion/default.json",
     "files-scs:config/util/resource-locker/memory.json",
@@ -28,43 +33,28 @@
   ],
   "@graph": [
     {
-      "comment": "Serve index.html within containers",
-      "@id": "urn:solid-server:default:ResourceStore_Index",
-      "@type": "IndexRepresentationStore"
+      "comment": [
+        "A filesystem-based server with Penny as UI.",
+        "Derived from config/file-no-setup.json"
+      ]
     },
 
     {
-      "comment": "Serve Penny as default container representation",
+      "comment": "Serve Penny as default representation",
       "@id": "urn:solid-server:default:DefaultUiConverter",
       "@type": "ConstantConverter",
-      "filePath": "./node_modules/penny-pod-inspector/server-ui/index.html",
       "contentType": "text/html",
-      "options_minQuality": 1,
+      "filePath": "./node_modules/penny-pod-inspector/server-ui/index.html",
       "options_container": true,
-      "options_document": false
+      "options_document": true,
+      "options_minQuality": 1
     },
 
     {
-      "comment": "Serve Community Solid Server and Penny static files.",
+      "comment": "Serve Penny static files.",
       "@id": "urn:solid-server:default:StaticAssetHandler",
       "@type": "StaticAssetHandler",
       "assets": [
-        {
-          "StaticAssetHandler:_assets_key": "/favicon.ico",
-          "StaticAssetHandler:_assets_value": "./node_modules/penny-pod-inspector/server-ui/favicon.ico"
-        },
-        {
-          "StaticAssetHandler:_assets_key": "/.well_known/css/styles/",
-          "StaticAssetHandler:_assets_value": "./node_modules/@solid/community-server/templates/styles/"
-        },
-        {
-          "StaticAssetHandler:_assets_key": "/.well_known/css/fonts/",
-          "StaticAssetHandler:_assets_value": "./node_modules/@solid/community-server/templates/fonts/"
-        },
-        {
-          "StaticAssetHandler:_assets_key": "/.well_known/css/images/",
-          "StaticAssetHandler:_assets_value": "./node_modules/@solid/community-server/templates/images/"
-        },
         {
           "StaticAssetHandler:_assets_key": "/server-ui/",
           "StaticAssetHandler:_assets_value": "./node_modules/penny-pod-inspector/server-ui/"
