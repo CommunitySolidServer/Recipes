@@ -14,7 +14,7 @@
     "files-scs:config/identity/ownership/token.json",
     "files-scs:config/identity/pod/static.json",
     "files-scs:config/identity/registration/enabled.json",
-    "files-scs:config/ldp/authentication/dpop-bearer.json",
+
     "files-scs:config/ldp/authorization/webacl.json",
     "files-scs:config/ldp/handler/default.json",
     "files-scs:config/ldp/metadata-parser/default.json",
@@ -34,8 +34,20 @@
   "@graph": [
     {
       "comment": [
-        "A filesystem-based server with Databrowser as UI.",
+        "A filesystem-based server with Databrowser as UI, with a test user.",
         "Derived from config/file-no-setup.json"
+      ]
+    },
+
+    {
+      "@id": "urn:solid-server:default:CredentialsExtractor",
+      "@type": "UnionCredentialsExtractor",
+      "extractors": [
+        {
+          "@type": "UnsecureConstantCredentialsExtractor",
+          "agent": "http://test.com/card#me"
+        },
+        { "@type": "PublicCredentialsExtractor" }
       ]
     },
 
