@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@solid/community-server": "^2.0.0",
+    "@solid/community-server-metadata-extender": "^1.0.0",
     "mashlib": "^1.7.7"
   }
 }
