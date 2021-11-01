@@ -1,3 +1,5 @@
 .acl
+.internal
+.meta
 componentsjs-error-state.json
 node_modules

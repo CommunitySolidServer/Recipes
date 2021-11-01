@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "npx community-solid-server -c config-penny.json"
+  },
   "dependencies": {
     "@solid/community-server": "2.0.0",
     "penny-pod-inspector": "^0.386403002.1669425319"

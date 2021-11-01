@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "npx community-solid-server -c config-mashlib.json",
+    "start:dev": "npx community-solid-server -c config-mashlib-dev.json"
+  },
   "dependencies": {
     "@solid/community-server": "^2.0.0",
     "@solid/community-server-metadata-extender": "^1.0.0",
