@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "npx community-solid-server -c config-metadata.json"
+  },
+  "dependencies": {
+    "@solid/community-server": "^2.0.1",
+    "@solid/community-server-metadata-extender": "^2.0.0"
+  }
+}
