@@ -85,6 +85,10 @@
         {
           "StaticAssetHandler:_assets_key": "/mashlib.min.js",
           "StaticAssetHandler:_assets_value": "./node_modules/mashlib/dist/mashlib.min.js"
+        },
+        {
+          "StaticAssetHandler:_assets_key": "/mashlib.min.js.map",
+          "StaticAssetHandler:_assets_value": "./node_modules/mashlib/dist/mashlib.min.js.map"
         }
       ]
     },
