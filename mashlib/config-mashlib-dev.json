@@ -107,6 +107,10 @@
       "comment": "Extend files with extra metadata.",
       "@id": "urn:solid-server:default:MetadataExtender",
       "@type": "MetadataExtender",
+      "options_ianaType":    true,
+      "options_statSize":    true,
+      "options_dctModified": true,
+      "options_statMtime":   true,
       "source": { "@id": "urn:solid-server:default:FileDataAccessor" }
     }
   ]
