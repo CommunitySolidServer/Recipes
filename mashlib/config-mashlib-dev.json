@@ -76,10 +76,6 @@
       "@type": "StaticAssetHandler",
       "assets": [
         {
-          "StaticAssetHandler:_assets_key": "/.well-known/solid/login",
-          "StaticAssetHandler:_assets_value": "./node_modules/solid-auth-client/dist-popup/popup.html"
-        },
-        {
           "StaticAssetHandler:_assets_key": "/mash.css",
           "StaticAssetHandler:_assets_value": "./node_modules/mashlib/dist/mash.css"
         },
