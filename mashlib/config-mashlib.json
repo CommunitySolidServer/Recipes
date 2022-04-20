@@ -1,8 +1,5 @@
 {
-  "@context": [
-    "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^3.0.0/components/context.jsonld",
-    "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server-metadata-extender/^3.0.0/components/context.jsonld"
-  ],
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^4.0.0/components/context.jsonld",
   "import": [
     "files-scs:config/app/main/default.json",
     "files-scs:config/app/init/initialize-root.json",
@@ -24,7 +21,7 @@
     "files-scs:config/ldp/metadata-parser/default.json",
     "files-scs:config/ldp/metadata-writer/default.json",
     "files-scs:config/ldp/modes/default.json",
-    "files-scs:config/storage/backend/data-accessors/file.json",
+    "files-scs:config/storage/backend/file.json",
     "files-scs:config/storage/key-value/resource-store.json",
     "files-scs:config/storage/middleware/default.json",
     "files-scs:config/util/auxiliary/acl.json",
@@ -76,26 +73,6 @@
           "StaticAssetHandler:_assets_value": "./node_modules/mashlib/dist/mashlib.min.js.map"
         }
       ]
-    },
-
-    {
-      "comment": "A default store setup with a file system backend.",
-      "@id": "urn:solid-server:default:ResourceStore_Backend",
-      "@type": "DataAccessorBasedStore",
-      "identifierStrategy": { "@id": "urn:solid-server:default:IdentifierStrategy" },
-      "auxiliaryStrategy": { "@id": "urn:solid-server:default:AuxiliaryStrategy" },
-      "accessor": { "@id": "urn:solid-server:default:MetadataExtender" }
-    },
-
-    {
-      "comment": "Extend files with extra metadata.",
-      "@id": "urn:solid-server:default:MetadataExtender",
-      "@type": "MetadataExtender",
-      "options_ianaType":    true,
-      "options_statSize":    true,
-      "options_dctModified": true,
-      "options_statMtime":   true,
-      "source": { "@id": "urn:solid-server:default:FileDataAccessor" }
     }
   ]
 }
