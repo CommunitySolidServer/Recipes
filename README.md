@@ -2,18 +2,18 @@
 
 # 🍱 Community Solid Server recipes
 This repository contains example configurations
-for the [Community Solid Server](https://github.com/solid/community-server/),
+for the [Community Solid Server](https://github.com/CommunitySolidServer/CommunitySolidServer),
 to get you started quickly.
 
 You can launch the Community Solid Server with the following user interfaces:
-- [Mashlib Data Browser](https://github.com/solid/mashlib)
+- [Mashlib Data Browser](https://github.com/SolidOS/mashlib)
 - [Penny](https://forum.solidproject.org/t/new-developer-tool-app-penny/3837)
 
 
 ## ⚙️ Installing the recipes
 ```shell
 # Load the configurations to your device
-git clone https://github.com/solid/community-server-recipes
+git clone https://github.com/CommunitySolidServer/Recipes
 cd community-server-recipes
 
 # Pick the configuration of your choice, and install its dependencies
