@@ -10,7 +10,8 @@ You can launch the Community Solid Server with the following user interfaces:
 - [Penny](https://forum.solidproject.org/t/new-developer-tool-app-penny/3837)
 
 
-## ⚙️ Installing the recipes
+## ⚙️ Installing the recipes using Node
+
 ```shell
 # Load the configurations to your device
 git clone https://github.com/CommunitySolidServer/Recipes
@@ -22,7 +23,7 @@ npm ci --production
 ```
 
 
-## 🚀 Starting the server from a recipe
+## 🚀 Starting the server from a recipe using Node
 
 ### Mashlib
 The Mashlib configurations are in the `mashlib` folder.
@@ -41,4 +42,18 @@ The Penny configurations are in the `penny` folder.
 ```shell
 # Start the server with your documents folder as the root container
 npx community-solid-server -c config-penny.json -f ~/Documents/
+```
+
+
+## 🐋 Installing/running using Docker
+
+With Docker, you can combine the steps of installing the recipes and starting the server into one.
+
+```shell
+git clone https://github.com/CommunitySolidServer/Recipes
+cd Recipes/
+docker build -f mashlib/Dockerfile -t css-recipes:mashlib .
+# docker build -f penny/Dockerfile -t css-recipes:penny .
+docker run --rm -v ~/Documents/:/data/ -p 3000:3000 -it css-recipes:mashlib -c config/config-mashlib.json
+# docker run --rm -v ~/Documents/:/data/ -p 3000:300 -it css-recipes:penny -c config/config-penny.json
 ```
