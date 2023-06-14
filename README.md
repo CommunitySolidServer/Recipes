@@ -18,7 +18,8 @@ cd community-server-recipes
 
 # Pick the configuration of your choice, and install its dependencies
 cd mashlib   # or penny
-npm ci --production
+npm ci --omit=dev
+
 ```
 
 
