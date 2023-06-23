@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "start": "npx community-solid-server -c config-solo-oidc.json -f ./root"
+  },
+  "dependencies": {
+    "@solid/community-server": "^6.0.1"
+  }
+}
