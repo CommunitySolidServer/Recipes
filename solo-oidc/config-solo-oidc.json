@@ -15,6 +15,7 @@
     "css:config/identity/handler/default.json",
     "css:config/identity/ownership/unsafe-no-check.json",
     "css:config/identity/pod/static.json",
+    "css:config/identity/registration/enabled.json",
     "css:config/ldp/authentication/dpop-bearer.json",
     "css:config/ldp/authorization/allow-all.json",
     "css:config/ldp/handler/default.json",
@@ -30,48 +31,21 @@
     "css:config/util/logging/winston.json",
     "css:config/util/representation-conversion/default.json",
     "css:config/util/resource-locker/debug-void.json",
-    "css:config/util/variables/default.json",
-    "css:config/identity/registration/route/registration.json"
+    "css:config/util/variables/default.json"
   ],
   "@graph": [
-        {
-      "comment": "If registration is enabled, the pod locations will be root storages.",
-      "@id": "urn:solid-server:default:StorageLocationStrategy",
-      "@type": "PodStorageLocationStrategy",
-      "generator": { "@id": "urn:solid-server:default:IdentifierGenerator" }
-    },
     {
-      "@id": "urn:solid-server:auth:password:InteractionRouteHandler",
-      "@type": "WaterfallHandler",
-      "handlers": [
-        { "@id": "urn:solid-server:auth:password:RegistrationRouteHandler" }
-      ]
-    },
-    {
-      "@id": "urn:solid-server:auth:password:ControlHandler",
-      "@type": "ControlHandler",
-      "controls": [
-        {
-          "ControlHandler:_controls_key": "register",
-          "ControlHandler:_controls_value": { "@id": "urn:solid-server:auth:password:RegistrationRoute" }
-        }
-      ]
-    },
-    {
-      "@id": "urn:solid-server:auth:password:HtmlViewHandler",
-      "@type": "HtmlViewHandler",
-      "templates": [
-        {
-          "HtmlViewHandler:_templates_key": "./templates/register.html.ejs",
-          "HtmlViewHandler:_templates_value": { "@id": "urn:solid-server:auth:password:RegistrationRoute" }
-        }
-      ]
-    },
-    {
-      "comment": "Root access is disabled when registration is enabled to prevent nested storage containers.",
-      "@id": "urn:solid-server:default:SetupHttpHandler",
-      "@type": "SetupHttpHandler",
-      "allowRootPod": false
+      "@type": "Override",
+      "overrideInstance": { "@id": "urn:solid-server:auth:password:HtmlViewHandler" },
+      "overrideParameters": {
+        "@type": "HtmlViewHandler",
+        "templates": [
+          {
+            "HtmlViewHandler:_templates_key": "./templates/register.html.ejs",
+            "HtmlViewHandler:_templates_value": { "@id": "urn:solid-server:auth:password:RegistrationRoute" }
+          }
+        ]
+      }
     }
   ]
 }
