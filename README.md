@@ -47,5 +47,5 @@ npx community-solid-server -c config-penny.json -f ~/Documents/
 The configurations provided here are just one possible combination of CSS features.
 You can use the following links to generate alternative configurations
 that also include the necessary statements for the relevant interfaces:
-  * [Mashlib](https://communitysolidserver.github.io/configuration-generator/v6/?config=https://raw.githubusercontent.com/CommunitySolidServer/Recipes/main/mashlib/config-mashlib.json&removeImports=%22util/index%22)
-  * [Penny](https://communitysolidserver.github.io/configuration-generator/v6/?config=https://raw.githubusercontent.com/CommunitySolidServer/Recipes/main/penny/config-penny.json&removeImports=%22util/index%22)
+  * [Mashlib](https://communitysolidserver.github.io/configuration-generator/v7/?config=https://raw.githubusercontent.com/CommunitySolidServer/Recipes/main/mashlib/config-mashlib.json&removeImports=%22util/index%22)
+  * [Penny](https://communitysolidserver.github.io/configuration-generator/v7/?config=https://raw.githubusercontent.com/CommunitySolidServer/Recipes/main/penny/config-penny.json&removeImports=%22util/index%22)
