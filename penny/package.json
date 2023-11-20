@@ -3,7 +3,7 @@
     "start": "npx community-solid-server -c config-penny.json"
   },
   "dependencies": {
-    "@solid/community-server": "^7.0.1",
+    "@solid/community-server": "^7.0.2",
     "penny-pod-inspector": "^0.1024692321.5216227821"
   }
 }
