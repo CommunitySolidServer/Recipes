@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "npx community-solid-server -c config-penny.json"
+    "start": "npx @solid/community-server -c config-penny.json"
   },
   "dependencies": {
     "@solid/community-server": "^7.0.4",
