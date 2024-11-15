@@ -11,10 +11,11 @@ You can launch the Community Solid Server with the following user interfaces:
 
 
 ## ⚙️ Installing the recipes
+
 ```shell
 # Load the configurations to your device
 git clone https://github.com/CommunitySolidServer/Recipes
-cd community-server-recipes
+cd Recipes
 
 # Pick the configuration of your choice, and install its dependencies
 cd mashlib   # or penny
@@ -29,10 +30,10 @@ The Mashlib configurations are in the `mashlib` folder.
 
 ```shell
 # Start the server with your documents folder as the root container
-npx community-solid-server -c config-mashlib.json -f ~/Documents/
+npx @solid/community-server -c config-mashlib.json -f ~/Documents/
 
 # Start the server in development mode (authenticated as a specific user)
-npx community-solid-server -c config-mashlib-dev.json -f ~/Documents/
+npx @solid/community-server -c config-mashlib-dev.json -f ~/Documents/
 ```
 
 ### Penny
@@ -40,7 +41,7 @@ The Penny configurations are in the `penny` folder.
 
 ```shell
 # Start the server with your documents folder as the root container
-npx community-solid-server -c config-penny.json -f ~/Documents/
+npx @solid/community-server -c config-penny.json -f ~/Documents/
 ```
 
 ## 📜 Customizing the recipes
