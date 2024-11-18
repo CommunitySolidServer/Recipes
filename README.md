@@ -14,7 +14,7 @@ You can launch the Community Solid Server with the following user interfaces:
 ```shell
 # Load the configurations to your device
 git clone https://github.com/CommunitySolidServer/Recipes
-cd community-server-recipes
+cd Recipes
 
 # Pick the configuration of your choice, and install its dependencies
 cd mashlib   # or penny
