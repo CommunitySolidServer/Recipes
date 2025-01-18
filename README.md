@@ -29,10 +29,10 @@ The Mashlib configurations are in the `mashlib` folder.
 
 ```shell
 # Start the server with your documents folder as the root container
-npx community-solid-server -c config-mashlib.json -f ~/Documents/
+npx @solid/community-server -c config-mashlib.json -f ~/Documents/
 
 # Start the server in development mode (authenticated as a specific user)
-npx community-solid-server -c config-mashlib-dev.json -f ~/Documents/
+npx @solid/community-server -c config-mashlib-dev.json -f ~/Documents/
 ```
 
 ### Penny
@@ -40,7 +40,7 @@ The Penny configurations are in the `penny` folder.
 
 ```shell
 # Start the server with your documents folder as the root container
-npx community-solid-server -c config-penny.json -f ~/Documents/
+npx @solid/community-server -c config-penny.json -f ~/Documents/
 ```
 
 ## 📜 Customizing the recipes
