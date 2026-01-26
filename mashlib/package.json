@@ -4,7 +4,7 @@
     "start:dev": "npx community-solid-server -c config-mashlib-dev.json"
   },
   "dependencies": {
-    "@solid/community-server": "^7.1.7",
+    "@solid/community-server": "^7.1.8",
     "mashlib": "^2.0.0"
   }
 }
